@@ -2,7 +2,7 @@ import * as React from 'react'
 
 const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
 
-function toggleReducer(state, {type, initialState}) {
+export function toggleReducer(state, {type, initialState}) {
   switch (type) {
     case 'toggle': {
       return {on: !state.on}
