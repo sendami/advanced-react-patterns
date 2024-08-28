@@ -3,14 +3,14 @@
 
 import * as React from 'react'
 import {Switch} from '../switch'
-import {useToggle, toggleReducer} from './05/hooks/useToggle'
+import {useToggle, toggleReducer, ActionTypes} from './05/hooks/useToggle'
 
 function App() {
   const [timesClicked, setTimesClicked] = React.useState(0)
   const clickedTooMuch = timesClicked >= 4
 
   function toggleStateReducer(state, action) {
-    if (action.type === 'toggle' && clickedTooMuch) {
+    if (action.type === ActionTypes.toggle && clickedTooMuch) {
       return {on: state.on}
     }
     return toggleReducer(state, action);
